@@ -1,0 +1,8 @@
+POST http://localhost:3000/api/layanan/addlayanan
+Content-Type: application/json
+
+{
+    "nama_layanan" : "tet",
+    "harga" : "12",
+    "deskripsi" : "ada"
+}

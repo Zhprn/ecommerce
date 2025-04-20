@@ -1,6 +1,6 @@
 module.exports = {
     HOST : 'localhost',
-    ROOT : 'root',
+    USER : 'root',
     PASSWORD : '',
     DB : 'logreg',
     dialect : 'mysql',

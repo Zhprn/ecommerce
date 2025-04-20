@@ -1,18 +1,18 @@
 module.exports = (Sequelize, DataTypes) => {
-    const User = Sequelize.define('user', {
-        nama : {
+    const antrian = Sequelize.define('antrian', {
+        pesanans_id : {
             type : DataTypes.STRING,
-            allowNull : false
-        }, 
-        email : {
+            allowNull : true
+        },
+        nomor : {
             type : DataTypes.STRING,
             allowNull : false
         },
-        password : {
+        status : {
             type : DataTypes.STRING,
             allowNull : false
-        },
+        }
     })
 
-    return User
+    return antrian;
 }

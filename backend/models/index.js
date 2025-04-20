@@ -1,7 +1,7 @@
 const dbconfig = require('../config/db.js');
 const { Sequelize, DataTypes } = require('sequelize')
 
-const sequelize = new sequelize(
+const sequelize = new Sequelize(
     dbconfig.DB,
     dbconfig.USER,
     dbconfig.PASSWORD,
@@ -28,12 +28,13 @@ sequelize.authenticate()
 
 const db = {};
 
-db.sequelize = sequelize
 db.Sequelize = Sequelize
+db.sequelize = sequelize
 
 db.user  = require('../models/User.js')(sequelize, DataTypes);
+db.layanan = require('../models/layanan.js')(sequelize, DataTypes)
 
-db.sequelize.async({force : false})
+db.sequelize.sync({force : false})
     .then(() => {
         console.log("Sync database succesfully")
     })
